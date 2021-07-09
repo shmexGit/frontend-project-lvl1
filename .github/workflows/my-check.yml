@@ -4,4 +4,10 @@ jobs:
   container-job:
     runs-on: ubuntu-latest
     steps:
-      - run: make lint
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+      - name: 'install'
+        run: npm i
+
+      - name: 'lint'
+        run: make lint
