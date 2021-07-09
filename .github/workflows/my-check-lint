@@ -1,4 +1,4 @@
-name: Check my lint
+name: my-check-lint
 on: [push]
 jobs:
   container-job:
