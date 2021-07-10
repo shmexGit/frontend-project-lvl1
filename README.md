@@ -4,3 +4,4 @@
 [asciinema link brain-even](https://asciinema.org/a/hn0Ggqd5PQ9vMv0Ob35gSjATB)
 [asciinema link brain-calc](https://asciinema.org/a/JNvSNBWTYv0Ty1qcN4IVuIWsR)
 [asciinema link brain-gcd](https://asciinema.org/a/xDTUY8ofN4xfkqAHrJlcNMcwh)
+[asciinema link brain-progression](https://asciinema.org/a/dbABOv7JEGgJsR74meSXU0fdl)
