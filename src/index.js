@@ -2,6 +2,7 @@ import readlineSync from 'readline-sync';
 import even from './games/even.js';
 import calc from './games/calc.js';
 import gcd from './games/gcd.js';
+import progression from './games/progression.js';
 
 function choiseGame(count) {
   switch (count) {
@@ -16,6 +17,10 @@ function choiseGame(count) {
     case 2: {
       console.log('Find the greatest common divisor of given numbers.');
       return gcd;
+    }
+    case 3: {
+      console.log('What number is missing in the progression?');
+      return progression;
     }
     default: {
       console.log('Answer "yes" if the number is even, otherwise answer "no".');
