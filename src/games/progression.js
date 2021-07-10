@@ -5,7 +5,7 @@ function calcStringProgression(size, first, next, empty) {
   const results = [];
   let count = first;
   let answer = 0;
-  for (let i = 0; i <= size; i++) {
+  for (let i = 0; i <= size; i += 1) {
     if (i === empty) {
       results.push('..');
       answer = count;
