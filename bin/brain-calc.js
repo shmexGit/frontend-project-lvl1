@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 import game from '../src/index.js';
 
-game(0);
+game(1);
