@@ -21,11 +21,11 @@ const getRound = () => {
 
   return {
     answer,
-    correctAnswer
+    correctAnswer,
   };
 };
 
-export const game = {
+export default {
   getRound,
-  description: 'Find the greatest common divisor of given numbers.'
+  description: 'Find the greatest common divisor of given numbers.',
 };

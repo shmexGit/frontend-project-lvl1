@@ -28,11 +28,11 @@ const getRound = () => {
   const answer = Number(readlineSync.question('Your answer: '));
   return {
     answer,
-    correctAnswer
+    correctAnswer,
   };
 };
 
-export const game = {
+export default {
   getRound,
-  description: 'What number is missing in the progression?'
+  description: 'What number is missing in the progression?',
 };

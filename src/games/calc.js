@@ -12,7 +12,7 @@ function calcExpression(one, two, op) {
   }
 }
 
-const getRound  = () => {
+const getRound = () => {
   const operandOne = _.random(1, 100);
   const operandTwo = _.random(1, 100);
   const operation = OPERATIONS[_.random(0, 2)];
@@ -23,11 +23,11 @@ const getRound  = () => {
 
   return {
     answer,
-    correctAnswer
+    correctAnswer,
   };
 };
 
-export const game = {
+export default {
   getRound,
-  description: 'What is the result of the expression?'
+  description: 'What is the result of the expression?',
 };

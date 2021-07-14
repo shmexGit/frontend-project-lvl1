@@ -10,11 +10,11 @@ const getRound = () => {
 
   return {
     answer,
-    correctAnswer
+    correctAnswer,
   };
 };
 
-export const game = {
+export default {
   getRound,
-  description: 'Answer "yes" if the number is even, otherwise answer "no".'
+  description: 'Answer "yes" if the number is even, otherwise answer "no".',
 };
