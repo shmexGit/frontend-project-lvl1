@@ -12,19 +12,22 @@ function calcExpression(one, two, op) {
   }
 }
 
-export default () => {
-  const oneNumber = _.random(1, 100);
-  const twoNumber = _.random(1, 100);
+const getRound  = () => {
+  const operandOne = _.random(1, 100);
+  const operandTwo = _.random(1, 100);
   const operation = OPERATIONS[_.random(0, 2)];
-  console.log(`Question: ${oneNumber} ${operation} ${twoNumber}`);
+  console.log(`Question: ${operandOne} ${operation} ${operandTwo}`);
 
-  const userAnswer = Number(readlineSync.question('Your answer: '));
-  const correctAnswer = calcExpression(oneNumber, twoNumber, operation);
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  } else {
-    console.log('Correct!');
-  }
+  const answer = Number(readlineSync.question('Your answer: '));
+  const correctAnswer = calcExpression(operandOne, operandTwo, operation);
 
-  return userAnswer === correctAnswer;
+  return {
+    answer,
+    correctAnswer
+  };
+};
+
+export const game = {
+  getRound,
+  description: 'What is the result of the expression?'
 };

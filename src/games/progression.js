@@ -1,7 +1,7 @@
 import readlineSync from 'readline-sync';
 import _ from 'lodash';
 
-function calcStringProgression(size, first, next, empty) {
+function calcProgression(size, first, next, empty) {
   const results = [];
   let count = first;
   let answer = 0;
@@ -17,20 +17,22 @@ function calcStringProgression(size, first, next, empty) {
   return [_.join(results, ' '), answer];
 }
 
-export default () => {
+const getRound = () => {
   const size = _.random(4, 9);
   const first = _.random(0, 20);
   const next = _.random(2, 10);
   const empty = _.random(0, size);
-  const [str, correctAnswer] = calcStringProgression(size, first, next, empty);
+  const [str, correctAnswer] = calcProgression(size, first, next, empty);
   console.log(`Question: ${str}`);
 
-  const userAnswer = Number(readlineSync.question('Your answer: '));
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  } else {
-    console.log('Correct!');
-  }
+  const answer = Number(readlineSync.question('Your answer: '));
+  return {
+    answer,
+    correctAnswer
+  };
+};
 
-  return userAnswer === correctAnswer;
+export const game = {
+  getRound,
+  description: 'What number is missing in the progression?'
 };

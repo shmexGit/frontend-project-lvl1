@@ -1,17 +1,20 @@
 import readlineSync from 'readline-sync';
 import _ from 'lodash';
 
-export default () => {
-  const randomNumber = _.random(1, 100);
-  console.log(`Question: ${randomNumber}`);
+const getRound = () => {
+  const number = _.random(1, 100);
+  console.log(`Question: ${number}`);
 
-  const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = randomNumber % 2 === 0 ? 'yes' : 'no';
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  } else {
-    console.log('Correct!');
-  }
+  const answer = readlineSync.question('Your answer: ');
+  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
 
-  return userAnswer === correctAnswer;
+  return {
+    answer,
+    correctAnswer
+  };
+};
+
+export const game = {
+  getRound,
+  description: 'Answer "yes" if the number is even, otherwise answer "no".'
 };

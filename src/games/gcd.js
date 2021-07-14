@@ -11,18 +11,21 @@ function calcDivisors(num) {
   return results;
 }
 
-export default () => {
+const getRound = () => {
   const oneNumber = _.random(1, 100);
   const twoNumber = _.random(1, 100);
   console.log(`Question: ${oneNumber} ${twoNumber}`);
 
-  const userAnswer = Number(readlineSync.question('Your answer: '));
+  const answer = Number(readlineSync.question('Your answer: '));
   const correctAnswer = _.max(_.intersection(calcDivisors(oneNumber), calcDivisors(twoNumber)));
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  } else {
-    console.log('Correct!');
-  }
 
-  return userAnswer === correctAnswer;
+  return {
+    answer,
+    correctAnswer
+  };
+};
+
+export const game = {
+  getRound,
+  description: 'Find the greatest common divisor of given numbers.'
 };

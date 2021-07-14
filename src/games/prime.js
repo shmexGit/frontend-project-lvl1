@@ -11,17 +11,20 @@ function isPrime(num) {
   return results.length === 2;
 }
 
-export default () => {
-  const randomNumber = _.random(1, 100);
-  console.log(`Question: ${randomNumber}`);
+const getRound = () => {
+  const number = _.random(1, 100);
+  console.log(`Question: ${number}`);
 
-  const userAnswer = readlineSync.question('Your answer: ');
-  const correctAnswer = isPrime(randomNumber) ? 'yes' : 'no';
-  if (userAnswer !== correctAnswer) {
-    console.log(`'${userAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-  } else {
-    console.log('Correct!');
-  }
+  const answer = readlineSync.question('Your answer: ');
+  const correctAnswer = isPrime(number) ? 'yes' : 'no';
 
-  return userAnswer === correctAnswer;
+  return {
+    answer,
+    correctAnswer
+  };
+};
+
+export const game = {
+  getRound,
+  description: 'Answer "yes" if given number is prime. Otherwise answer "no".'
 };
